@@ -1,0 +1,10 @@
+<label>{{label}}</label>
+<div class="ui {{if labeled 'labeled'}} {{if small 'small'}} icon input">
+    {{#if labeled}}
+        <div class="ui label">
+            {{labelContent}}
+        </div>
+    {{/if}}
+    <input type="text" class="paya-datepicker" name={{name}} value={{value}} onchange={{action 'updateValue' value='target.value'}} readonly>
+    <i class="calendar icon" {{action 'openPikaday'}}></i>
+</div>

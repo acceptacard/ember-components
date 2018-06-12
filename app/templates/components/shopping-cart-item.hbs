@@ -1,0 +1,21 @@
+<td style="width: 100px;">
+    <img src="{{ item.image }}">
+</td>
+<td>
+    <h3>{{ item.name }}</h3><br />
+    Identifier: {{ item.identifier }}
+</td>
+<td class="right aligned">
+    &pound;{{ div item.purchasePrice 100 }}
+</td>
+<td class="right aligned">
+    &pound;{{ div item.depositPrice 100 }}
+</td>
+<td class="right aligned">
+    &pound;{{ div item.rentalPrice 100 }} / month
+</td>
+<td>
+    <a class="delete-item" data-id="{{ item.uniqueId }}" {{action 'remove' item target=shoppingCart}}>
+        <i class="icon times" style="color: red;"></i>
+    </a>
+</td>

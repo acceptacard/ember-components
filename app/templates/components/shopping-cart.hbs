@@ -1,0 +1,22 @@
+<table class="ui celled striped table">
+    <thead>
+    <tr>
+        <th colspan="2"></th>
+        <th style="width: 150px;">Purchase Price</th>
+        <th style="width: 150px;">Deposit</th>
+        <th style="width: 150px;">Rental</th>
+        <th style="width: 150px;">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each shoppingCart.items as |item|}}
+        {{ shopping-cart-item item=item }}
+    {{/each}}
+    <tr class="summary">
+        <td colspan="2" class="right aligned">TOTALS</td>
+        <td class="right aligned">&pound;{{ shoppingCart.basketPurchaseValue }}</td>
+        <td class="right aligned">&pound;{{ shoppingCart.basketDepositValue }}</td>
+        <td class="right aligned">&pound;{{ shoppingCart.basketRentalValue }} / month</td>
+    </tr>
+    </tbody>
+</table>

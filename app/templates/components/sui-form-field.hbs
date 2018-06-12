@@ -1,0 +1,7 @@
+{{#if label}}
+    <label class="{{if labelColour labelColour ''}} text">{{label}}</label>
+{{/if}}
+{{yield}}
+{{#if errors}}
+    {{sui-message class="red" items=errors}}
+{{/if}}

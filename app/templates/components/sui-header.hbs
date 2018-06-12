@@ -1,0 +1,14 @@
+{{#if image}}
+    <img class="ui image" src="{{image}}">
+{{/if}}
+{{#unless image}}
+    {{#if icon}}
+        {{sui-icon name=icon}}
+    {{/if}}
+{{/unless}}
+<div class="content">
+    {{header}}
+    {{#if subheader}}
+        <div class="sub header">{{subheader}}</div>
+    {{/if}}
+</div>
