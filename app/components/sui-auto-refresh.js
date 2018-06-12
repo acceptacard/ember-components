@@ -1,1 +1,0 @@
-export { default } from 'ember-components/components/auto-refresh';

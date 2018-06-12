@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
 import { isPresent } from '@ember/utils';
-import { DEFAULT_DATE_TIME_FORMAT, MYSQL_DATE_TIME_FORMAT } from 'partner-secure-operations-com/modules/datetime';
+import { DEFAULT_DATE_TIME_FORMAT, MYSQL_DATE_TIME_FORMAT } from '../modules/datetime';
 import moment from 'moment';
 
 export function mysqlToUkDateTime(params) {
