@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import {inject} from '@ember/service';
+import layout from '../templates/components/sui-datagrid-controls';
 
 export default Component.extend({
     tagName: '',
