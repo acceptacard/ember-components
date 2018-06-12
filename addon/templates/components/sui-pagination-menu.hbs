@@ -1,0 +1,10 @@
+{{#each-in defaultLinks as |defaultLinkName defaultLinkValue|}}
+    {{#if (get links defaultLinkName)}}
+        <a {{action 'updatePaginationParams' (get links defaultLinkName)}} class="item">{{sui-icon name=defaultLinkValue.icon}}</a>
+    {{else}}
+        <div class="disabled item">{{sui-icon name=defaultLinkValue.icon}}</div>
+    {{/if}}
+    {{#if (eq defaultLinkName 'prev')}}
+        <div class="header item">{{infoText}}</div>
+    {{/if}}
+{{/each-in}}
