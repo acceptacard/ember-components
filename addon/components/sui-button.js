@@ -1,7 +1,9 @@
 import Component from '@ember/component';
 import {isPresent} from "@ember/utils";
+import layout from '../templates/components/sui-button';
 
 export default Component.extend({
+    layout,
     classNames: ['ui', 'button'],
     classNameBindings: [
         'loading', 'disabled'
