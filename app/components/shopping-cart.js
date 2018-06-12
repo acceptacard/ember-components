@@ -1,9 +1,1 @@
-import Component from '@ember/component';
-import { inject } from '@ember/service';
-
-export default Component.extend({
-    shoppingCart: inject(),
-
-
-
-});
+export { default } from 'ember-components/components/shopping-cart';
