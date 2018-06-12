@@ -1,0 +1,1 @@
+export { default } from 'ember-components/helpers/check-permissions';
