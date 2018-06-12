@@ -1,12 +1,17 @@
 import Component from '@ember/component';
 import {isPresent, isEmpty} from '@ember/utils';
 import {computed} from '@ember/object';
+import {inject} from '@ember/service';
 import {htmlSafe} from "@ember/string";
-import {DATAGRID_DISPLAYED_ROWS} from 'merchant-secure-operations-com/modules/dropdowns';
+import {DATAGRID_DISPLAYED_ROWS} from 'partner-secure-operations-com/modules/dropdowns';
+import $ from 'jquery';
 import layout from '../templates/components/sui-datagrid';
 
 export default Component.extend({
+
     layout,
+    media: inject(),
+
     classNames: ['ui', 'grid'],
 
     // Should the table headers show a "pointer" cursor in order to signify sortable.

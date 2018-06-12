@@ -3,6 +3,7 @@ import {inject} from '@ember/service';
 import layout from '../templates/components/sui-datagrid-controls';
 
 export default Component.extend({
+    layout,
     tagName: '',
 
     actions: {
