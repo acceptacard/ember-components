@@ -3,7 +3,6 @@ import {isPresent, isEmpty} from '@ember/utils';
 import {computed} from '@ember/object';
 import {inject} from '@ember/service';
 import {htmlSafe} from "@ember/string";
-import {DATAGRID_DISPLAYED_ROWS} from 'partner-secure-operations-com/modules/dropdowns';
 import $ from 'jquery';
 import layout from '../templates/components/sui-datagrid';
 
@@ -28,6 +27,17 @@ export default Component.extend({
     // Component has initialised its attributes (only fires on component creation, not on re-renders).
     init: function () {
         this._super(...arguments);
+
+        this.set('dropdownDisplayedRows', {
+            options: [
+                {text: 'All', value: 'all'},
+                {text: '5', value: '5'},
+                {text: '10', value: '10'},
+                {text: '25', value: '25'},
+                {text: '50', value: '50'},
+                {text: '100', value: '100'},
+            ]
+        });
 
         // Set table classes.
         let cssClasses = ['unstackable', 'selectable', 'celled', 'padded', 'fixed', 'fluid',
@@ -158,7 +168,6 @@ export default Component.extend({
 
     dateTo: computed.alias('filterToDate'),
 
-    dropdownDisplayedRows: DATAGRID_DISPLAYED_ROWS,
     datagridDisplayedRows: 'all',
 
     // Height table should be. A scrollbar will appear to allow access to the rest of the table rows.
