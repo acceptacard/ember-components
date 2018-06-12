@@ -1,0 +1,17 @@
+{{#if labelTop}}
+    <div class="label">
+        {{label}}
+    </div>
+{{/if}}
+<div class="{{if textValue 'text' ''}} value">
+    {{#if icon}}
+        {{sui-icon name=value}}
+    {{else}}
+        {{value}}
+    {{/if}}
+</div>
+{{#unless labelTop}}
+    <div class="label">
+        {{label}}
+    </div>
+{{/unless}}

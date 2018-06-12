@@ -1,0 +1,168 @@
+{{#if (media 'isDesktop')}}
+    {{#sui-menu class="secondary mini stackable"}}
+        <div class="item">
+            {{sui-button class="mini yellow labeled icon" icon="filter" text=(if showFilters 'HIDE FILTERS' 'SHOW FILTERS') onClick=(action "showHideFilters")}}
+        </div>
+        <div class="fitted header item">
+            <p>{{filteredByText}}</p>
+        </div>
+        <div class="fitted header item">
+            <strong class="primary text">&nbsp;{{uppercase currentFilterText}}</strong>
+        </div>
+        <div class="right menu">
+            <div class="fitted header item">
+                <p><strong class="primary text">DATE RANGE</strong></p>
+            </div>
+            <div class="item">
+                <div class="ui labeled icon input">
+                    <div class="ui icon label">
+                        FROM
+                    </div>
+                    {{ember-flatpickr
+                            date=(readonly fromDate)
+                            dateFormat=createdFromDatepickerOptions.format
+                            defaultDate=fromDate
+                            maxDate=createdFromDatepickerOptions.maxDate
+                            minDate=createdFromDatepickerOptions.minDate
+                            onChange=(action 'changeFromDate')
+                            placeholder='Choose a Date'
+                    }}
+                    {{sui-icon name="calendar alternate"}}
+                </div>
+            </div>
+            <div class="item">
+                <div class="ui labeled icon input">
+                    <div class="ui icon label">
+                        TO
+                    </div>
+                    {{ember-flatpickr
+                            date=(readonly toDate)
+                            dateFormat=createdToDatepickerOptions.format
+                            defaultDate=toDate
+                            maxDate=createdToDatepickerOptions.maxDate
+                            minDate=createdToDatepickerOptions.minDate
+                            onChange=(action 'changeToDate')
+                            placeholder='Choose a Date'
+                    }}
+                    {{sui-icon name="calendar alternate"}}
+                </div>
+            </div>
+            <div class="item">
+                {{sui-button class="mini labeled icon" icon="refresh" text="REFRESH LIST" onClick=(action "refresh")}}
+            </div>
+            <div class="item">
+                {{sui-button class="mini red labeled icon" icon="undo" text="RESET LIST" onClick=(action "resetFilters")}}
+            </div>
+        </div>
+    {{/sui-menu}}
+{{else if (media 'isTablet')}}
+    <div class="eight wide column">
+        {{sui-button class="fluid labeled icon" icon="refresh" text="REFRESH LIST" onClick=(action "refresh")}}
+    </div>
+    <div class="eight wide column">
+        {{sui-button class="fluid red labeled icon" icon="undo" text="RESET LIST" onClick=(action "resetFilters")}}
+    </div>
+    <div class="eight wide column">
+        <div class="ui fluid labeled icon input">
+            <div class="ui icon label">
+                FROM
+            </div>
+            {{ember-flatpickr
+                    date=(readonly fromDate)
+                    dateFormat=createdFromDatepickerOptions.format
+                    defaultDate=fromDate
+                    maxDate=createdFromDatepickerOptions.maxDate
+                    minDate=createdFromDatepickerOptions.minDate
+                    onChange=(action 'changeFromDate')
+                    placeholder='Choose a Date'
+            }}
+            {{sui-icon name="calendar alternate"}}
+        </div>
+    </div>
+    <div class="eight wide column">
+        <div class="ui fluid labeled icon input">
+            <div class="ui icon label">
+                TO
+            </div>
+            {{ember-flatpickr
+                    date=(readonly toDate)
+                    dateFormat=createdToDatepickerOptions.format
+                    defaultDate=toDate
+                    maxDate=createdToDatepickerOptions.maxDate
+                    minDate=createdToDatepickerOptions.minDate
+                    onChange=(action 'changeToDate')
+                    placeholder='Choose a Date'
+            }}
+            {{sui-icon name="calendar alternate"}}
+        </div>
+    </div>
+    {{#if showFilters}}
+        <div class="eight wide column">
+            {{sui-button class="fluid yellow labeled icon" icon="filter" text=(if showFilters 'HIDE FILTERS' 'SHOW FILTERS') onClick=(action "showHideFilters")}}
+        </div>
+        <div class="eight wide column">
+            {{sui-button class="mini yellow labeled icon" icon="check" text="APPLY FILTER" click=(action 'filterResults')}}
+        </div>
+    {{else}}
+        <div class="eight wide centered column">
+            {{sui-button class="fluid yellow labeled icon" icon="filter" text=(if showFilters 'HIDE FILTERS' 'SHOW FILTERS') onClick=(action "showHideFilters")}}
+        </div>
+    {{/if}}
+{{else}}
+    <div class="sixteen wide column">
+        <div class="ui equal width grid">
+            <div class="eight wide column">
+                {{sui-button class="fluid labeled icon" icon="refresh" text="REFRESH" onClick=(action "refresh")}}
+            </div>
+            <div class="eight wide column">
+                {{sui-button class="fluid red labeled icon" icon="undo" text="RESET" onClick=(action "resetFilters")}}
+            </div>
+            <div class="sixteen wide column">
+                <div class="ui fluid labeled icon input">
+                    <div class="ui icon label">
+                        FROM
+                    </div>
+                    {{ember-flatpickr
+                            date=(readonly fromDate)
+                            dateFormat=createdFromDatepickerOptions.format
+                            defaultDate=fromDate
+                            maxDate=createdFromDatepickerOptions.maxDate
+                            minDate=createdFromDatepickerOptions.minDate
+                            onChange=(action 'changeFromDate')
+                            placeholder='Choose a Date'
+                    }}
+                    {{sui-icon name="calendar alternate"}}
+                </div>
+            </div>
+            <div class="sixteen wide column">
+                <div class="ui fluid labeled icon input">
+                    <div class="ui icon label">
+                        TO
+                    </div>
+                    {{ember-flatpickr
+                            date=(readonly toDate)
+                            dateFormat=createdToDatepickerOptions.format
+                            defaultDate=toDate
+                            maxDate=createdToDatepickerOptions.maxDate
+                            minDate=createdToDatepickerOptions.minDate
+                            onChange=(action 'changeToDate')
+                            placeholder='Choose a Date'
+                    }}
+                    {{sui-icon name="calendar alternate"}}
+                </div>
+            </div>
+            {{#if showFilters}}
+                <div class="eight wide column">
+                    {{sui-button class="fluid yellow labeled icon" icon="filter" text=(if showFilters 'HIDE FILTERS' 'SHOW FILTERS') onClick=(action "showHideFilters")}}
+                </div>
+                <div class="eight wide column">
+                    {{sui-button class="fluid yellow labeled icon" icon="check" text="APPLY FILTER" click=(action 'filterResults')}}
+                </div>
+            {{else}}
+                <div class="sixteen wide column">
+                    {{sui-button class="fluid yellow labeled icon" icon="filter" text=(if showFilters 'HIDE FILTERS' 'SHOW FILTERS') onClick=(action "showHideFilters")}}
+                </div>
+            {{/if}}
+        </div>
+    </div>
+{{/if}}
