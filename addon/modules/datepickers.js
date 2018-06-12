@@ -1,5 +1,5 @@
 import { computed } from '@ember/object';
-import { DEFAULT_DATE_FORMAT, DEFAULT_FLATPICKR_DATE_FORMAT } from 'datetime';
+import { DEFAULT_DATE_FORMAT, DEFAULT_FLATPICKR_DATE_FORMAT } from './datetime';
 import moment from 'moment';
 
 // ---------- CONSTANTS ----------
